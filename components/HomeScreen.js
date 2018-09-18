@@ -30,7 +30,7 @@ class HomeScreen extends React.Component {
       <GreyBoxContainer>
 
         <h1>Find the pokémons!</h1>
-        <Button>Search</Button>
+        <Button>Random</Button>
         <Button>Inspect</Button>
 
       </GreyBoxContainer>
