@@ -1,15 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
-import styled from "styled-components";
-
-const Greeting = styled.h1`
-  text-align: center;
-  color: blue;
-`;
-
-const Hello = ({ name }) => <Greeting>{name}</Greeting>;
+import HomeScreen from './components/HomeScreen'
 
 render(
-  <Hello name="Meu primeiro componente!" />,
+  <HomeScreen message="Meu primeiro componente!" />,
   document.getElementById("root")
 );
