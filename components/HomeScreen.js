@@ -19,7 +19,7 @@ const CenteredContainer = styled.div`
 
 const GreyBoxContainer = styled.div`
   text-align: center;
-  max-width: 50%;
+  max-width: 70%;
   background-color: grey;
 `
 
