@@ -25,13 +25,29 @@ const GreyBoxContainer = styled.div`
 
 class HomeScreen extends React.Component {
 
+  constructor() {
+    super()
+
+    this.handleInspectClick = this.handleInspectClick.bind(this)
+    this.handleRandomClick = this.handleRandomClick.bind(this)
+  }
+
+
+  handleInspectClick () {
+    console.log('handle inspect button click event')
+  }
+
+  handleRandomClick () {
+    console.log('handle random button click event')
+  }
+
   render () {
     return <CenteredContainer>
       <GreyBoxContainer>
 
         <h1>Find the pokémons!</h1>
-        <Button>Random</Button>
-        <Button>Inspect</Button>
+        <Button onClick={this.handleRandomClick}>Random</Button>
+        <Button onClick={this.handleInspectClick}>Inspect</Button>
 
       </GreyBoxContainer>
     </CenteredContainer>;
