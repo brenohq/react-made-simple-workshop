@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PokemonCard from './PokemonCard';
 
 const Button = styled.button`
   color: palevioletred;
@@ -30,22 +31,33 @@ class HomeScreen extends React.Component {
 
     this.handleInspectClick = this.handleInspectClick.bind(this)
     this.handleRandomClick = this.handleRandomClick.bind(this)
+
+    this.state = {
+      pokemonData: {}
+    }
   }
 
 
   handleInspectClick () {
-    console.log('handle inspect button click event')
+    this.setState({ pokemonData: {} })
   }
 
   handleRandomClick () {
-    console.log('handle random button click event')
+    this.setState({
+      pokemonData: {
+        number: '1',
+        name: 'Bulbassaur',
+        type: 'Plant'
+      }
+    })
   }
 
   render () {
     return <CenteredContainer>
       <GreyBoxContainer>
 
-        <h1>Find the pokémons!</h1>
+        <PokemonCard {...this.state.pokemonData} />
+
         <Button onClick={this.handleRandomClick}>Random</Button>
         <Button onClick={this.handleInspectClick}>Inspect</Button>
 
