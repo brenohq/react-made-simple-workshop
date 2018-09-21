@@ -32,7 +32,7 @@ class HomeScreen extends React.Component {
       <GreyBoxContainer>
 
         {
-          this.state.species.map(specie => <SpecieCard {...specie} />)
+          this.state.species.map(specie => <SpecieCard key={specie.name} {...specie} />)
         }
 
       </GreyBoxContainer>
