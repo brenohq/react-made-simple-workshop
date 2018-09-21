@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import PokemonCard from './PokemonCard'
+import SpecieCard from './SpecieCard'
 import { GET } from '../utils/http-client'
 
 const Button = styled.button`
@@ -34,7 +34,7 @@ class HomeScreen extends React.Component {
     this.handleRandomClick = this.handleRandomClick.bind(this)
 
     this.state = {
-      pokemonData: {},
+      specieData: {},
       species: []
     }
   }
@@ -44,12 +44,12 @@ class HomeScreen extends React.Component {
   }
 
   handleInspectClick () {
-    this.setState({ pokemonData: {} })
+    this.setState({ specieData: {} })
   }
 
   handleRandomClick () {
     this.setState({
-      pokemonData: {
+      specieData: {
         number: '1',
         name: 'Bulbassaur',
         type: 'Plant'
@@ -61,12 +61,10 @@ class HomeScreen extends React.Component {
     return <CenteredContainer>
       <GreyBoxContainer>
 
-        <PokemonCard {...this.state.pokemonData} />
+        <SpecieCard {...this.state.specieData} />
 
         <Button onClick={this.handleRandomClick}>Random</Button>
         <Button onClick={this.handleInspectClick}>Inspect</Button>
-
-        {this.state.species.map(el => JSON.stringify(el))}
 
       </GreyBoxContainer>
     </CenteredContainer>;

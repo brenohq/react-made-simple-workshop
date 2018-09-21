@@ -11,7 +11,7 @@ const Column = styled.div`
   flex-direction: column;
 `
 
-class PokemonCard extends React.Component {
+class SpecieCard extends React.Component {
 
   render () {
     return <Container>
@@ -23,4 +23,4 @@ class PokemonCard extends React.Component {
   }
 }
 
-export default PokemonCard
+export default SpecieCard
