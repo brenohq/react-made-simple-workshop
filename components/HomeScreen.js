@@ -5,12 +5,17 @@ import { GET } from '../utils/http-client'
 
 const CenteredContainer = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
 const GreyBoxContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+`
+
+const CenteredTitle = styled.h1`
+  text-align: center;
 `
 
 class HomeScreen extends React.Component {
@@ -29,6 +34,9 @@ class HomeScreen extends React.Component {
 
   render () {
     return <CenteredContainer>
+
+      <CenteredTitle>Star Wars Species</CenteredTitle>
+
       <GreyBoxContainer>
 
         {
