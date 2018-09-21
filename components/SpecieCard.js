@@ -2,23 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: 0 1 24%;
+  text-align: center;
+  margin: 4px;
+  padding: 15px;
+  background-color: grey;
 `;
-
-const Column = styled.div`
-  flex-direction: column;
-`
 
 class SpecieCard extends React.Component {
 
   render () {
     return <Container>
-      <Column>
-        <h3>Name: {this.props.name} #{this.props.number}</h3>
-        <h3>Type: {this.props.type}</h3>
-      </Column>
+      <p>Name: {this.props.name}</p>
+      <p>Language: {this.props.language}</p>
+      <p>Hair color: {this.props.hair_colors}</p>
     </Container>;
   }
 }
