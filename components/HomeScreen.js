@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import PokemonCard from './PokemonCard';
+import PokemonCard from './PokemonCard'
+import { GET } from '../utils/http-client'
 
 const Button = styled.button`
   color: palevioletred;
@@ -33,10 +34,14 @@ class HomeScreen extends React.Component {
     this.handleRandomClick = this.handleRandomClick.bind(this)
 
     this.state = {
-      pokemonData: {}
+      pokemonData: {},
+      species: []
     }
   }
 
+  componentDidMount () {
+    GET('species').then(res => this.setState({ species: res.results }))
+  }
 
   handleInspectClick () {
     this.setState({ pokemonData: {} })
@@ -60,6 +65,8 @@ class HomeScreen extends React.Component {
 
         <Button onClick={this.handleRandomClick}>Random</Button>
         <Button onClick={this.handleInspectClick}>Inspect</Button>
+
+        {this.state.species.map(el => JSON.stringify(el))}
 
       </GreyBoxContainer>
     </CenteredContainer>;
