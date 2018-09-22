@@ -5,9 +5,20 @@ const Container = styled.div`
   flex: 0 1 24%;
   text-align: center;
   margin: 4px;
-  padding: 15px;
-  background-color: grey;
+  background-color: lightgrey;
 `;
+
+const StyledSquare = styled.div`
+  background-color: ${props => props.color};
+  height: 30px;
+  width: 30px;
+`
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`
 
 class SpecieCard extends React.Component {
 
@@ -33,9 +44,17 @@ class SpecieCard extends React.Component {
 
   render () {
     return <Container>
+
+      <Row>
+        {
+          this.state.skin_colors.map(color => <StyledSquare color={color} />)
+        }
+      </Row>
+
       <p>Name: {this.props.name}</p>
       <p>Language: {this.props.language}</p>
       <p>Hair color: {this.props.hair_colors}</p>
+
     </Container>;
   }
 }
