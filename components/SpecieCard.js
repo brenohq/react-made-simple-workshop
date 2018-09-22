@@ -23,6 +23,10 @@ class SpecieCard extends React.Component {
     })
   }
 
+  componentDidUpdate () {
+    console.log(this.state.skin_colors)
+  }
+
   createArrayFromCommaSeparatedString (string = '') {
     return string.split(/[ ,]+/)
   }
