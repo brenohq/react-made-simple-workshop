@@ -11,6 +11,22 @@ const Container = styled.div`
 
 class SpecieCard extends React.Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = { skin_colors: [] }
+  }
+
+  componentDidMount () {
+    this.setState({
+      skin_colors: this.createArrayFromCommaSeparatedString(this.props.skin_colors)
+    })
+  }
+
+  createArrayFromCommaSeparatedString (string = '') {
+    return string.split(/[ ,]+/)
+  }
+
   render () {
     return <Container>
       <p>Name: {this.props.name}</p>
