@@ -47,7 +47,7 @@ class SpecieCard extends React.Component {
 
       <Row>
         {
-          this.state.skin_colors.map(color => <StyledSquare color={color} />)
+          this.state.skin_colors.map((color, index) => <StyledSquare key={index} color={color} />)
         }
       </Row>
 
