@@ -19,7 +19,7 @@ const GreyBoxContainer = styled.div`
   justify-content: center;
 `
 
-class HomeScreen extends React.Component {
+class SpeciesScreen extends React.Component {
 
   constructor() {
     super()
@@ -45,4 +45,4 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default HomeScreen
+export default SpeciesScreen

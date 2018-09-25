@@ -1,5 +1,5 @@
-import HomeScreen from './HomeScreen'
 import React from 'react'
+import SpeciesScreen from './SpeciesScreen'
 import PeopleScreen from './PeopleScreen'
 import styled from 'styled-components'
 
@@ -18,7 +18,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      activeRoute: '/home-screen'
+      activeRoute: '/species-screen'
     }
   }
 
@@ -26,8 +26,8 @@ class App extends React.Component {
     this.setState({ activeRoute: '/people-screen' })
   }
 
-  navigateToHomeScreen () {
-    this.setState({ activeRoute: '/home-screen' })
+  navigateToSpeciesScreen () {
+    this.setState({ activeRoute: '/species-screen' })
   }
 
   render () {
@@ -36,10 +36,10 @@ class App extends React.Component {
 
       <div>
         {
-          this.state.activeRoute === '/home-screen'
-            ? <HomeScreen navigate={() => this.navigateToPeopleScreen()} />
+          this.state.activeRoute === '/species-screen'
+            ? <SpeciesScreen navigate={() => this.navigateToPeopleScreen()} />
             : this.state.activeRoute === '/people-screen'
-              ? <PeopleScreen navigate={() => this.navigateToHomeScreen()} />
+              ? <PeopleScreen navigate={() => this.navigateToSpeciesScreen()} />
               : null
         }
       </div>
