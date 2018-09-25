@@ -12,6 +12,7 @@ const Column = styled.div`
 `
 
 class SpecieCard extends React.Component {
+  // Componente simples para exibir as props name, type e number que forem passadas
 
   render () {
     return <Container>

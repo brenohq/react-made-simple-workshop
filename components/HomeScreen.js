@@ -40,14 +40,18 @@ class HomeScreen extends React.Component {
   }
 
   componentDidMount () {
+    // Fazendo o fetch de https://swapi.co/api/species 
+    // e jogando o resultado para o estado do componente
     GET('species').then(res => this.setState({ species: res.results }))
   }
 
   handleInspectClick () {
+    // Resetando o this.state.specieData
     this.setState({ specieData: {} })
   }
 
   handleRandomClick () {
+    // Mockando o conteúdo de uma request
     this.setState({
       specieData: {
         number: '1',
