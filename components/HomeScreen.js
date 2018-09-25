@@ -28,11 +28,12 @@ class HomeScreen extends React.Component {
   constructor() {
     super()
 
+    // Configurando o contexto em que as funções terão quando forem chamadas
     this.handleInspectClick = this.handleInspectClick.bind(this)
     this.handleRandomClick = this.handleRandomClick.bind(this)
   }
 
-
+  // Definindo funções para cada evento de click
   handleInspectClick () {
     console.log('handle inspect button click event')
   }
