@@ -1,8 +1,8 @@
-import React from "react";
-import { render } from "react-dom";
-import HomeScreen from './components/HomeScreen'
+import React from "react"
+import { render } from "react-dom"
+import App from './components/App'
 
 render(
-  <HomeScreen />,
+  <App />,
   document.getElementById("root")
 );

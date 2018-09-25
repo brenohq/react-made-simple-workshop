@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import SpecieCard from './SpecieCard'
+import styled from 'styled-components'
 import { GET } from '../utils/http-client'
 
 const Button = styled.button`
@@ -19,30 +19,30 @@ const GreyBoxContainer = styled.div`
   justify-content: center;
 `
 
-class HomeScreen extends React.Component {
+class PeopleScreen extends React.Component {
 
   constructor() {
     super()
 
     this.state = {
-      species: []
+      people: []
     }
   }
 
   componentDidMount () {
-    GET('species').then(res => this.setState({ species: res.results }))
+    GET('people').then(res => this.setState({ people: res.results }))
   }
 
   render () {
     return <GreyBoxContainer>
 
       {
-        this.state.species.map(specie => <SpecieCard key={specie.name} {...specie} />)
+        this.state.people.map(people => <SpecieCard key={people.name} {...people} />)
       }
 
-      <Button onClick={this.props.navigate}>Navegar</Button>
+      <Button onClick={this.props.navigate} >Navegar</Button>
     </GreyBoxContainer>
   }
 }
 
-export default HomeScreen
+export default PeopleScreen
