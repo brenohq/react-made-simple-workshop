@@ -1,5 +1,5 @@
 import React from 'react'
-import SpecieCard from './SpecieCard'
+import Card from './Card'
 import styled from 'styled-components'
 import { GET } from '../utils/http-client'
 
@@ -33,11 +33,23 @@ class PeopleScreen extends React.Component {
     GET('people').then(res => this.setState({ people: res.results }))
   }
 
+  createArrayFromCommaSeparatedString (string = '') {
+    return string.split(/[ ,]+/)
+  }
+
+  componentDidUpdate () {
+    console.log(this.props.people)
+  }
+
   render () {
     return <GreyBoxContainer>
 
       {
-        this.state.people.map(people => <SpecieCard key={people.name} {...people} />)
+        this.state.people.map(people => <Card key={people.name} propertiesToShow={{
+          name: people.name,
+          mass: people.mass,
+          hair_color: people.hair_color
+        }} />)
       }
 
       <Button onClick={this.props.navigate} >Navegar</Button>

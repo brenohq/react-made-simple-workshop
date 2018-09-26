@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import SpecieCard from './SpecieCard'
+import Card from './Card'
 import { GET } from '../utils/http-client'
 
 const Button = styled.button`
@@ -33,14 +33,23 @@ class SpeciesScreen extends React.Component {
     GET('species').then(res => this.setState({ species: res.results }))
   }
 
+  createArrayFromCommaSeparatedString (string = '') {
+    return string.split(/[ ,]+/)
+  }
+
   render () {
     return <GreyBoxContainer>
 
       {
-        this.state.species.map(specie => <SpecieCard key={specie.name} {...specie} />)
+        this.state.species.map(people => <Card key={people.name} propertiesToShow={{
+          name: people.name,
+          language: people.language,
+          classification: people.classification,
+          skin_colors: this.createArrayFromCommaSeparatedString(people.skin_colors)
+        }} />)
       }
 
-      <Button onClick={this.props.navigate}>Navegar</Button>
+      <Button onClick={this.props.navigate} >Navegar</Button>
     </GreyBoxContainer>
   }
 }
