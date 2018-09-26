@@ -1,7 +1,7 @@
 <p align="center">
   <a href="#react-made-simple">About This Workshop</a> •
   <a href="#setup">Setup</a> •
-  <a href="#step-by-step">Download</a> •
+  <a href="#step-by-step">Step by Step</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a>
 </p>
